@@ -137,6 +137,9 @@ int main() {
                        znak=!znak;
                    }
                    break;
+               default:
+                   std::cout<<"Podano niepiprawny numer pola, spróbuj ponownie"<<std::endl;
+                   znak=!znak;
            }
            if(znak)
            {
