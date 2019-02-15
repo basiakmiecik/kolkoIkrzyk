@@ -35,6 +35,7 @@ int main() {
 
            std::cout << "Podaj numer pola które chcesz zająć ";
            std::cin >> poleNumber;
+           bool zajmij(false);
            switch(poleNumber)
            {
                case 1:
@@ -42,10 +43,12 @@ int main() {
                    {
                        pole1 = symbol;
                        liczbaZajetychPol+=1;
+                       zajmij=true;
+
                    }
                    else{
                        std::cout<< "Podany numer pola jest zajęty zajmij inne pole"<<std::endl;
-                       znak=!znak;
+
                    }
                    break;
                case 2:
@@ -53,10 +56,11 @@ int main() {
                    {
                        pole2 = symbol;
                        liczbaZajetychPol+=1;
+                       zajmij=true;
                    }
                    else{
                        std::cout<< "Podany numer pola jest zajęty zajmij inne pole"<<std::endl;
-                       znak=!znak;
+                       //znak=!znak;
                    }
                    break;
                case 3:
@@ -64,10 +68,11 @@ int main() {
                    {
                        pole3 = symbol;
                        liczbaZajetychPol+=1;
+                       zajmij=true;
                    }
                    else{
                        std::cout<< "Podany numer pola jest zajęty zajmij inne pole"<<std::endl;
-                       znak=!znak;
+                       //znak=!znak;
                    }
                    break;
                case 4:
@@ -75,11 +80,12 @@ int main() {
                    {
                        pole4 = symbol;
                        liczbaZajetychPol+=1;
+                       zajmij=true;
 
                    }
                    else{
                        std::cout<< "Podany numer pola jest zajęty zajmij inne pole"<<std::endl;
-                       znak=!znak;
+                       //znak=!znak;
                    }
                    break;
                case 5:
@@ -87,10 +93,11 @@ int main() {
                    {
                        pole5 = symbol;
                        liczbaZajetychPol+=1;
+                       zajmij=true;
                    }
                    else{
                        std::cout<< "Podany numer pola jest zajęty zajmij inne pole"<<std::endl;
-                       znak=!znak;
+                       //znak=!znak;
                    }
                    break;
                case 6:
@@ -98,10 +105,11 @@ int main() {
                    {
                        pole6 = symbol;
                        liczbaZajetychPol+=1;
+                       zajmij=true;
                    }
                    else{
                        std::cout<< "Podany numer pola jest zajęty zajmij inne pole"<<std::endl;
-                       znak=!znak;
+                       //znak=!znak;
                    }
                    break;
                case 7:
@@ -109,10 +117,11 @@ int main() {
                    {
                        pole7 = symbol;
                        liczbaZajetychPol+=1;
+                       zajmij=true;
                    }
                    else{
                        std::cout<< "Podany numer pola jest zajęty zajmij inne pole"<<std::endl;
-                       znak=!znak;
+                       //znak=!znak;
                    }
                    break;
                case 8:
@@ -120,10 +129,11 @@ int main() {
                    {
                        pole8 = symbol;
                        liczbaZajetychPol+=1;
+                       zajmij=true;
                    }
                    else{
                        std::cout<< "Podany numer pola jest zajęty zajmij inne pole"<<std::endl;
-                       znak=!znak;
+                       //znak=!znak;
                    }
                    break;
                case 9:
@@ -131,24 +141,28 @@ int main() {
                    {
                        pole9 = symbol;
                        liczbaZajetychPol+=1;
+                       zajmij=true;
                    }
                    else{
                        std::cout<< "Podany numer pola jest zajęty zajmij inne pole"<<std::endl;
-                       znak=!znak;
+                       //znak=!znak;
                    }
                    break;
                default:
                    std::cout<<"Podano niepiprawny numer pola, spróbuj ponownie"<<std::endl;
-                   znak=!znak;
+                   //znak=!znak;
            }
-           if(znak)
+           if(zajmij)
            {
-               symbol='O';
-           }else
-           {
-               symbol='X';
+               if (znak) {
+                   symbol = 'O';
+                   znak = !znak;
+               } else {
+                   symbol = 'X';
+                   znak = !znak;
+               }
+               zajmij = false;
            }
-           znak=!znak;
 
 
            std::cout << std::setw(3) << pole1 << "|" << pole2 << "|" << pole3 << std::endl;
